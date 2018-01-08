@@ -1,0 +1,295 @@
+@import './variables';
+@import './homepage/nav';
+@import './homepage/footer';
+@import './homepage/explore';
+@import './homepage/featured-on';
+@import './homepage/the-program';
+@import './homepage/absolute-best';
+@import './homepage/viral-academy';
+@import './homepage/bonus-training';
+@import './homepage/badass-students';
+@import './homepage/one-of-two-things';
+@import './homepage/constantly-innovating';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hind', sans-serif;
+  color: white;
+  background: #0C131B;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $accent;
+}
+
+.max-wrapp {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.no-container-spacing {
+  padding: 0px;
+}
+
+.btn {
+  background: transparent;
+  border: solid 2px $accent;
+  border-radius: 0px;
+  padding: 11px 60px 11px 20px;
+  text-align: left;
+  position: relative;
+  font-size: 17px;
+  max-width: 450px;
+  &.hidden-sm-down {
+    @include mobile() {
+      display: none;
+    }
+    @include tablet() {
+      display: none;
+    }
+  }
+  &.hidden-md-up {
+    @include desktop() {
+      display: none;
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    margin-top: 5px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    width: 13px;
+    height: 13px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  &:hover {
+    background: rgba(156, 156, 156, 0.14);
+    border: solid 2px $accent;
+    &:after {
+      border: solid $accent;
+      border-width: 0 3px 3px 0;
+    }
+  }
+  &:active, &:focus, &:target {
+    border-color: $accent!important;
+    background-color: rgba(156, 156, 156, 0.14)!important;
+    outline: none;
+  }
+}
+
+.btn-icon-yt {
+  padding: 13px 90px 13px 60px;
+  margin-top:20px;
+  &:before {
+    font-family: 'FontAwesome';
+    content: "\f16a"; /* Youtube Icon */
+    color: $accent;
+    position: absolute;
+    font-size: 25px;
+    top: 7px;
+    left: 20px;
+  }
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.desktop-only {
+  @include mobile() {
+    display: none;
+  }
+  @include tablet() {
+    display: none;
+  }
+}
+.mobile-only {
+  @include desktop() {
+    display: none;
+  }
+}
+
+.title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-style: italic;
+  margin-bottom: 15px;
+  letter-spacing: 1.6px;
+  @include mobile() {
+    font-size: 36px;
+  }
+  &.smaller-title {
+    font-size: 35px;
+  }
+  &.subtle-title {
+    font-style: italic;
+    color: $medGray;
+    font-weight: 400;
+    font-size: 30px;
+  }
+}
+.subtitle {
+  font-size: 26px;
+  letter-spacing: 0.7px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 200;
+  line-height: 1.8;
+  margin: 15px 0 10px 0;
+  @include mobile() {
+    font-size: 16px;
+  }
+}
+
+p.subtitle {
+  max-width: 755px;
+}
+
+.long-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  color: $lightGray;
+  line-height: 2;
+  font-size: 17px;
+  letter-spacing: 0.4px;
+  margin-bottom: 15px;
+  max-width: 755px;
+  &.less-bold {
+    font-weight: 200;
+  }
+}
+
+.section-header {
+  .long-text {
+    font-weight: 200;
+    color: #848e9a;
+  }
+}
+
+
+.frame-left {
+  @include desktop() {
+    margin-left: $framePadding;
+    padding-left: 0;
+  }
+}
+.frame-right {
+  @include desktop() {
+    margin-right: $framePadding;
+    padding-right: 0;
+  }
+}
+.frame-both-sides {
+  @include desktop() {
+    margin: 0 $framePadding;
+    padding: 0 0;
+  }
+}
+.has-container-spacing {
+  padding: 25px 15px 50px 15px;
+  @include desktop() {
+    padding: 25px 15px 50px 15px;
+  }
+}
+
+.section-header {
+  margin-bottom: 45px;
+  @include mobile() {
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0 15px;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.has-bottom-separator {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $separator;
+    @include desktop() {
+      left: $framePadding;
+      right: $framePadding;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+.p-0 {
+  padding: 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mt-0 {
+  margin-top: 0;
+}
+
+.text-center-mobile {
+  @include mobile() {
+    text-align: center;
+  }
+}
+
+#vimeo-modal {
+   .modal-dialog {
+     @media (min-width: 1175px) {
+       width: 1100px;
+       iframe {
+         width: 1070px;
+         height: 601px;
+       }
+     }
+     @media (min-width: 767px) and (max-width: 1175px) {
+       width: 750px;
+     }
+     .modal-content {
+       background-color: $bg;
+     }
+   }
+   .modal-header {
+     padding: 15px 15px 0px 0px;
+     border: none;
+     button.close {
+       color: white;
+     }
+   }
+   iframe {
+     @media (max-width: 767px) {
+       width: 100%;
+       height: 340px;
+     }
+   }
+ }
+
+.modal-backdrop.in {
+  opacity: 0.75;
+}

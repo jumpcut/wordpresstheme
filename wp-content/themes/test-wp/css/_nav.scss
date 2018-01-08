@@ -1,0 +1,82 @@
+.navbar.navbar-default {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15px;
+  background-color: transparent;
+  border: 0;
+  z-index: 2;
+  @include mobile() {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    top: 0;
+  }
+  .navbar-collapse.in, .collapsing {
+    background: #000;
+    opacity:0.85;
+  }
+  .container-fluid {
+    padding: 0 80px;
+    @include mobile() {
+      padding: 0;
+    }
+    .navbar-header {
+      margin: 0;
+    }
+  }
+}
+.navbar-default .navbar-nav {
+  li {
+    &:not(:last-child) {
+      padding: 0 25px;
+    }
+    &:last-child {
+      @include mobile() {
+        padding: 0 25px;
+      }
+    }
+    a {
+      color: white;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 200;
+      letter-spacing: 1px;
+      font-size: 14px;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+.navbar-brand {
+  width: 106px;
+  box-sizing: content-box;
+  @include mobile() {
+    float: none;
+    margin: 0 auto;
+    height: auto;
+  }
+}
+.navbar-header {
+  position: relative;
+  min-height: 50px;
+  @include mobile() {
+    margin: 0;
+    text-align: center;
+  }
+  .navbar-toggle { // hamburger
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    float: none;
+    padding: 0;
+    background: none;
+    margin: 0;
+    border: 0;
+    .icon-bar {
+      background-color: white;
+    }
+  }
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background: transparent;
+}
